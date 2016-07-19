@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>me.tongfei</groupId>
+    <artifactId>jackhammer_2.11</artifactId>
+    <packaging>jar</packaging>
+    <description>jackhammer</description>
+    <version>0.2.0-SNAPSHOT</version>
+    <name>jackhammer</name>
+    <organization>
+        <name>me.tongfei</name>
+    </organization>
+    
+    <parent>
+      <groupId>edu.jhu.hlt</groupId>
+      <artifactId>hltcoe-concrete-parent</artifactId>
+      <version>4.10-rework</version>
+    </parent>
+
+    <build>
+        <sourceDirectory>src/main/scala</sourceDirectory>
+        <testSourceDirectory>src/test/scala</testSourceDirectory>
+    
+        <plugins>
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.11.8</version>
+        </dependency>
+        <dependency>
+            <groupId>me.tongfei</groupId>
+            <artifactId>config_2.11</artifactId>
+            <version>0.1.2-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>me.tongfei</groupId>
+            <artifactId>probe_2.11</artifactId>
+            <version>0.6.5-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>me.tongfei</groupId>
+            <artifactId>poly-io_2.11</artifactId>
+            <version>0.2.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>me.tongfei</groupId>
+            <artifactId>granite_2.11</artifactId>
+            <version>0.5.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>jcenter</id>
+            <name>jcenter</name>
+            <url>https://jcenter.bintray.com/</url>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <id>sonatypesnapshots</id>
+            <name>sonatype-snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+</project>
