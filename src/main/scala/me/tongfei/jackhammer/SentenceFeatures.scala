@@ -10,11 +10,25 @@ import me.tongfei.probe._
  */
 object SentenceFeatures {
 
-  val BagOfWords = Featurizer.count("w") { s: jhu.Sentence =>
-    s.tokenization.tokenList.map(t => t.text.toLowerCase)
+  val Words = Featurizer.count("w") { s: jhu.Sentence =>
+    s.tokenization.tokenList.map(t => t.text.toLowerCase).filter(t => t.head.isLetter)
   }
 
-  val StemmedBagOfWords = BagOfWords map PorterStemmer.apply
+  val BagOfWords = Words uniformWeight
+
+  val StemmedBagOfWords = Words map PorterStemmer uniformWeight
+
+  def TfIdfWeightedWords(lr: LanguageResources) = Words assignWeights { w => lr.idf.getOrElse(w, 1.5) }
+
+  def StemmedTfIdfWeightedWords(lr: LanguageResources) = Words map PorterStemmer assignWeights { w => lr.idf.getOrElse(w, 1.5) }
+
+  val NamedEntityTypes = Featurizer.binary("netype") { s: jhu.Sentence =>
+    for {
+      ner <- s.tokenization.nerTagging.toList
+      tok <- ner.taggedTokenList if tok.tag != "O"
+    } yield tok.tag
+  }
+
 
 
 }

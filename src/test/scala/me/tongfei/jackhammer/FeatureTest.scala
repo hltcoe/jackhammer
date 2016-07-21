@@ -20,6 +20,12 @@ object FeatureTest extends App {
 
   val f = fx(m, comm)
 
+  val s = comm.sectionList.head.sentenceList.head
+
+  val fs = SentenceFeatures.StemmedBagOfWords(s)
+
+  val fnt = SentenceFeatures.NamedEntityTypes(s)
+
   val bp = 0
 
 }

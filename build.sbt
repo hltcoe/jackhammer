@@ -1,6 +1,6 @@
 name := "jackhammer"
 organization := "me.tongfei"
-version := "0.2.0-SNAPSHOT"
+version := "0.2.2-SNAPSHOT"
 
 isSnapshot := true
 

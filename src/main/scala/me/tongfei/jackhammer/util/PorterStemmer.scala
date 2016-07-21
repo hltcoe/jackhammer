@@ -1,6 +1,6 @@
 package me.tongfei.jackhammer.util
 
-object PorterStemmer {
+object PorterStemmer extends (String => String) {
   val vowels = "aeiou"
   val step1aVals = List(("sses", "ss"), ("ies","i"), ("ss","ss"), ("s", ""))
   val step1bVals = List(("at", "ate"), ("bl","ble"), ("iz","ize"))
