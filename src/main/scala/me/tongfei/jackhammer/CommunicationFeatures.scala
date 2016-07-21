@@ -17,6 +17,6 @@ object CommunicationFeatures {
     } yield token.text)
       .map(_.toLowerCase)
       .filter(w => !(lr.stopwords contains w))
-  }.assignWeights(lr.idf).topK(k).uniformWeight
+  }.assignWeights(w => lr.idf.getOrElse(w, 1.5)).topK(k).uniformWeight
 
 }
