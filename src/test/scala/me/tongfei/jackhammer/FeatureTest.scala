@@ -14,6 +14,8 @@ object FeatureTest extends App {
 
   val m = comm.entityMentionSetList(1).mentionList(3)
 
+  val en = LanguageResources("en", "/Users/tongfei/my/data/stopwords-english.txt", "/Users/tongfei/my/data/idf-english-gigaword-nyt.txt")
+
   val lr = LanguageResources("zh", "/Users/tongfei/my/data/zh-ldc2015e17/zh.stopwords.txt", "/Users/tongfei/my/data/zh-ldc2015e17/zh.idf.txt")
 
   val fx = MentionFeatures.Text ++ MentionFeatures.Words ++ MentionFeatures.WordTrigrams ++ MentionFeatures.Type ++ MentionFeatures.ContextWords(lr, 10)

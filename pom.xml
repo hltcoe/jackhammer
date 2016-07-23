@@ -5,7 +5,7 @@
     <artifactId>jackhammer_2.11</artifactId>
     <packaging>jar</packaging>
     <description>jackhammer</description>
-    <version>0.2.2-SNAPSHOT</version>
+    <version>0.2.4-SNAPSHOT</version>
     <name>jackhammer</name>
     <organization>
         <name>me.tongfei</name>
@@ -53,7 +53,7 @@
         <dependency>
             <groupId>me.tongfei</groupId>
             <artifactId>probe_2.11</artifactId>
-            <version>0.6.5-SNAPSHOT</version>
+            <version>0.6.7-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>me.tongfei</groupId>
@@ -63,7 +63,7 @@
         <dependency>
             <groupId>me.tongfei</groupId>
             <artifactId>granite_2.11</artifactId>
-            <version>0.5.1-SNAPSHOT</version>
+            <version>4.10.2-SNAPSHOT</version>
         </dependency>
     </dependencies>
     <repositories>

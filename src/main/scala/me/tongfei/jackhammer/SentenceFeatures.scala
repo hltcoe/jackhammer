@@ -24,11 +24,9 @@ object SentenceFeatures {
 
   val NamedEntityTypes = Featurizer.binary("netype") { s: jhu.Sentence =>
     for {
-      ner <- s.tokenization.nerTagging.toList
-      tok <- ner.taggedTokenList if tok.tag != "O"
+      n <- s.tokenization.nerTagging.toList
+      tok <- n.taggedTokenList if tok.tag != "O"
     } yield tok.tag
   }
-
-
 
 }

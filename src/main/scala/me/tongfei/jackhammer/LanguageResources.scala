@@ -14,7 +14,9 @@ object LanguageResources {
 
   def apply(id: String, stopwordsFile: String, idfFilename: String) = {
     val stopwordsSet = File(stopwordsFile).lines.toSet
-    val idfMap = File(idfFilename).lines.map { case sm"$w\t$v" => w -> v.toDouble }.toMap
+    val idfMap = File(idfFilename).lines.map { s =>
+      val sa = s.split('\t')
+      sa(0) -> sa(1).toDouble }.toMap
     new LanguageResources(id, stopwordsSet, idfMap)
   }
 
