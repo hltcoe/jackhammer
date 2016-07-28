@@ -1,5 +1,6 @@
 package me.tongfei.jackhammer
 
+import edu.jhu.hlt.{concrete => jhu}
 import me.tongfei.granite._
 import me.tongfei.probe._
 import me.tongfei.jackhammer.util._
@@ -12,7 +13,7 @@ object QuestionFeatures {
   val rootDependencyLabel = "root"
   val qwords = Set("who", "where", "why", "when", "how", "what", "which", "whose", "whom")
 
-  val QuestionWordWithLexicalAnswerTypeFeature = Featurizer.binary("qword") { s: Sentence =>
+  val QuestionWordWithLexicalAnswerType = Featurizer.binary("qword") { s: jhu.Sentence =>
 
     val pos = s.tokenization.posTagging.get
     val g = DependencyGraph.ofConcreteSentence(s, 0)

@@ -1,5 +1,6 @@
 package me.tongfei.jackhammer
 
+import edu.jhu.hlt.{concrete => jhu}
 import me.tongfei.granite._
 import me.tongfei.probe._
 
@@ -8,7 +9,7 @@ import me.tongfei.probe._
  */
 object MentionFeatures {
 
-  type Mention = (EntityMention, Communication)
+  type Mention = (jhu.EntityMention, jhu.Communication)
 
   val Text = Featurizer.singleCategorical("t") { s: Mention =>
     s._1.text
