@@ -1,26 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
     <groupId>me.tongfei</groupId>
     <artifactId>jackhammer_2.11</artifactId>
     <packaging>jar</packaging>
     <description>jackhammer</description>
-    <version>0.2.4-SNAPSHOT</version>
+    <version>0.2.5-SNAPSHOT</version>
     <name>jackhammer</name>
     <organization>
         <name>me.tongfei</name>
     </organization>
-    
+
     <parent>
-      <groupId>edu.jhu.hlt</groupId>
-      <artifactId>hltcoe-concrete-parent</artifactId>
-      <version>4.10-rework</version>
+        <groupId>edu.jhu.hlt</groupId>
+        <artifactId>concrete-parent</artifactId>
+        <version>4.10-rework</version>
     </parent>
 
     <build>
         <sourceDirectory>src/main/scala</sourceDirectory>
         <testSourceDirectory>src/test/scala</testSourceDirectory>
-    
+
         <plugins>
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
@@ -36,7 +37,7 @@
                 </executions>
             </plugin>
         </plugins>
-    
+
     </build>
 
     <dependencies>
@@ -53,7 +54,7 @@
         <dependency>
             <groupId>me.tongfei</groupId>
             <artifactId>probe_2.11</artifactId>
-            <version>0.6.7-SNAPSHOT</version>
+            <version>0.7.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>me.tongfei</groupId>
@@ -63,9 +64,32 @@
         <dependency>
             <groupId>me.tongfei</groupId>
             <artifactId>granite_2.11</artifactId>
-            <version>4.10.2-SNAPSHOT</version>
+            <version>4.10.3-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.stanford.nlp</groupId>
+            <artifactId>stanford-parser</artifactId>
+            <version>3.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.stanford.nlp</groupId>
+            <artifactId>stanford-parser</artifactId>
+            <version>3.5.2</version>
+            <classifier>models</classifier>
+        </dependency>
+        <dependency>
+            <groupId>edu.stanford.nlp</groupId>
+            <artifactId>stanford-corenlp</artifactId>
+            <version>3.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.stanford.nlp</groupId>
+            <artifactId>stanford-corenlp</artifactId>
+            <version>3.5.2</version>
+            <classifier>models</classifier>
         </dependency>
     </dependencies>
+
     <repositories>
         <repository>
             <id>jcenter</id>
